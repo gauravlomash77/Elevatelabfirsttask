@@ -1,22 +1,49 @@
-# CI/CD Pipeline Using GitHub Actions and Docker
+# Node.js Portfolio CI/CD with Docker and GitHub Actions
 
-This repository demonstrates how to automate the **build, test, and deployment** process of a **My Node.js portfolio application** using **GitHub Actions** and **Docker**.
+This repository demonstrates a **complete CI/CD pipeline** for My Node.js portfolio application using **GitHub Actions** and **Docker**.
+
+---
 
 ## Overview
 
-The project contains:
+- A simple **Node.js portfolio app** built with **Express.js**  
+- **Dockerfile** to containerize the application  
+- **GitHub Actions workflow** for automating CI/CD (build → test → DockerHub push → EC2 deployment)  
+- Deployment target: **AWS EC2 instance** running Docker  
 
-- A simple Node.js portfolio app built with **Express.js**
-- A **Dockerfile** for containerizing the application
-- A **GitHub Actions workflow** for automating the CI/CD process
+---
 
 ## Workflow Summary
 
-- Code is **tested and built automatically**
-- **Docker image** is created and pushed to **DockerHub**
-- **GitHub Secrets** are used to securely store credentials
+1. **Code Checkout**: Pulls the latest code from `main` branch  
+2. **Setup Node.js**: Installs Node.js version 18  
+3. **Install Dependencies**: Runs `npm install`  
+4. **Run Tests**: Executes `npm test`  
+5. **Docker Build & Push**: Builds Docker image and pushes it to DockerHub  
+6. **EC2 Deployment**: SSH into EC2, pull the latest image, and run the container  
+
+---
+
+## Secrets Required
+
+- `DOCKERHUB_USERNAME` → DockerHub username  
+- `DOCKERHUB_TOKEN` → DockerHub access token  
+- `EC2_HOST` → Public IP of EC2 instance  
+- `EC2_USER` → EC2 username (`ec2-user` for Amazon Linux / `ubuntu` for Ubuntu)  
+- `EC2_KEY` → Private SSH key content for EC2  
+
+---
 
 ## Outcome
 
-- A fully automated **CI/CD pipeline** that builds, tests, and deploys the Node.js application
-- Docker image on DockerHub is always **updated with the latest code**
+- **Automated CI/CD pipeline** triggered on every push to `main`  
+- Docker image is built and pushed to DockerHub automatically  
+- Latest version of the portfolio app is deployed to **EC2**  
+
+---
+
+## Access
+
+
+- Once deployed, the portfolio can be accessed at:
+- http://43.205.118.64/
