@@ -15,10 +15,10 @@ This repository demonstrates a **complete CI/CD pipeline** for My Node.js portfo
 
 ## Workflow Summary
 
-1. **Code Checkout**: Pulls the latest code from `main` branch  
+1. **Code Checkout**: Pulls the latest code from main branch  
 2. **Setup Node.js**: Installs Node.js version 18  
-3. **Install Dependencies**: Runs `npm install`  
-4. **Run Tests**: Executes `npm test`  
+3. **Install Dependencies**: Runs npm install  
+4. **Run Tests**: Executes npm test  
 5. **Docker Build & Push**: Builds Docker image and pushes it to DockerHub  
 6. **EC2 Deployment**: SSH into EC2, pull the latest image, and run the container  
 
@@ -26,17 +26,17 @@ This repository demonstrates a **complete CI/CD pipeline** for My Node.js portfo
 
 ## Secrets Required
 
-- `DOCKERHUB_USERNAME` → DockerHub username  
-- `DOCKERHUB_TOKEN` → DockerHub access token  
-- `EC2_HOST` → Public IP of EC2 instance  
-- `EC2_USER` → EC2 username   
-- `EC2_KEY` → Private SSH key content for EC2  
+- DOCKERHUB_USERNAME → DockerHub username  
+- DOCKERHUB_TOKEN → DockerHub access token  
+- EC2_HOST → Public IP of EC2 instance  
+- EC2_USER → EC2 username   
+- EC2_KEY → Private SSH key content for EC2  
 
 ---
 
 ## Outcome
 
-- **Automated CI/CD pipeline** triggered on every push to `main`  
+- **Automated CI/CD pipeline** triggered on every push to main  
 - Docker image is built and pushed to DockerHub automatically  
 - Latest version of the portfolio app is deployed to **EC2**  
 
