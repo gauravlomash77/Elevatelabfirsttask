@@ -29,7 +29,7 @@ This repository demonstrates a **complete CI/CD pipeline** for My Node.js portfo
 - `DOCKERHUB_USERNAME` → DockerHub username  
 - `DOCKERHUB_TOKEN` → DockerHub access token  
 - `EC2_HOST` → Public IP of EC2 instance  
-- `EC2_USER` → EC2 username (`ec2-user` for Amazon Linux / `ubuntu` for Ubuntu)  
+- `EC2_USER` → EC2 username   
 - `EC2_KEY` → Private SSH key content for EC2  
 
 ---
